@@ -26,6 +26,19 @@ app.get('/', (req, res) => {
     console.log('데이터 추가 성공')
   })  
 })
+
+app.get('/list', (req, res) => {
+  const sql = "SELECT FROM BOARD (rowno) VALUES (1)";
+  db.query(sql, (err, rows, fields) => {
+    if (err) throw err;  
+    res.send('성공');
+    console.log('데이터 추가 성공')
+  })  
+})
+
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
