@@ -1,6 +1,15 @@
+const cors = require('cors')
 const express = require('express')
 const app = express()
 const port = 8000
+
+var corsOptions = {
+  //origin: 'http://localhost:3000/',
+  origin: '*' //모든 출처 허용
+}
+app.use(cors(corsOptions));
+
+
 const mysql = require('mysql')
 const db = mysql.createConnection({
   host: 'localhost',
